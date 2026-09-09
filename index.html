@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -805,6 +805,7 @@ html&gt;body{padding:0}&lt;/style&gt;
   #qingdao-leaflet-trip .leaflet-popup-content { margin:11px 14px; }
   #qingdao-leaflet-trip .leaflet-popup-content strong { display:block; margin-bottom:3px; }
   #qingdao-leaflet-trip .popup-photo { display:block; width:100%; height:180px; margin-top:9px; border-radius:7px; object-fit:cover; background:#eee; }
+  #qingdao-leaflet-trip .popup-note { display:block; margin-top:7px; color:#344054; line-height:1.45; }
   #qingdao-leaflet-trip .pin-wrap { background:transparent; border:0; }
   #qingdao-leaflet-trip .pin { width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; color:#fff; border:2px solid #fff; box-shadow:0 1px 5px rgba(0,0,0,.45); font-size:11px; font-weight:500; box-sizing:border-box; }
   #qingdao-leaflet-trip .pin-day-1 { background:var(--viz-series-1); }
@@ -835,7 +836,11 @@ html&gt;body{padding:0}&lt;/style&gt;
       &quot;小鱼山公园&quot;:&quot;qingdao-xiaoyushan.png&quot;,
       &quot;小青岛公园&quot;:&quot;qingdao-xiaoqingdao.png&quot;,
       &quot;栈桥·中山路&quot;:&quot;qingdao-zhanqiao.png&quot;,
-      &quot;八大关&quot;:&quot;qingdao-badaguan.png&quot;
+      &quot;八大关&quot;:&quot;qingdao-badaguan.png&quot;,
+      &quot;青岛啤酒博物馆&quot;:&quot;qingdao-beer-museum.png&quot;,
+      &quot;五四广场&quot;:&quot;qingdao-may-fourth-square.png&quot;,
+      &quot;小麦岛公园&quot;:&quot;qingdao-xiaomai-island.png&quot;,
+      &quot;大鲍岛·RIVI LOUNGE 瑞澜餐吧&quot;:&quot;qingdao-rivi-lounge.png&quot;
     };
     const hotel={name:&quot;青岛栈桥中山路亚朵酒店&quot;,lat:36.0702,lon:120.3186,type:&quot;hotel&quot;,time:&quot;住宿&quot;};
     const arrival={name:&quot;青岛站&quot;,lat:36.0634,lon:120.3126,type:&quot;train&quot;,time:&quot;9月11日 14:00抵达&quot;};
@@ -852,15 +857,16 @@ html&gt;body{padding:0}&lt;/style&gt;
       ]},
       2:{date:&quot;9月12日&quot;,title:&quot;完整滨海向东线&quot;,summary:&quot;全天约 13–15 km&quot;,stops:[
         {...hotel,n:&quot;住&quot;,time:&quot;08:00出发&quot;},
-        {name:&quot;小鱼山公园&quot;,lat:36.05867,lon:120.33128,time:&quot;08:30&quot;,n:1},
-        {name:&quot;第一海水浴场&quot;,lat:36.0570,lon:120.3368,time:&quot;09:30&quot;,n:2},
-        {name:&quot;八大关&quot;,lat:36.05761,lon:120.34522,time:&quot;10:30&quot;,n:3},
-        {name:&quot;第二海水浴场&quot;,lat:36.0527,lon:120.3490,time:&quot;12:00&quot;,n:4},
-        {name:&quot;太平角&quot;,lat:36.0529,lon:120.3620,time:&quot;13:30&quot;,n:5},
-        {name:&quot;第三海水浴场&quot;,lat:36.0554,lon:120.3706,time:&quot;15:00&quot;,n:6},
-        {name:&quot;五四广场&quot;,lat:36.06442,lon:120.37544,time:&quot;17:00&quot;,n:7},
-        {name:&quot;奥帆中心&quot;,lat:36.05711,lon:120.39377,time:&quot;18:00&quot;,n:8},
-        {name:&quot;小麦岛公园&quot;,lat:36.05369,lon:120.42542,time:&quot;19:30&quot;,n:9}
+        {name:&quot;大鲍岛·RIVI LOUNGE 瑞澜餐吧&quot;,lat:36.0735,lon:120.3197,time:&quot;08:15&quot;,n:1,note:&quot;瑞澜酒店 RIVI LOUNGE 瑞澜餐吧；坐电梯至酒店14楼后，步梯上顶层平台&quot;},
+        {name:&quot;小鱼山公园&quot;,lat:36.05867,lon:120.33128,time:&quot;09:15&quot;,n:2},
+        {name:&quot;第一海水浴场&quot;,lat:36.0570,lon:120.3368,time:&quot;10:00&quot;,n:3},
+        {name:&quot;八大关&quot;,lat:36.05761,lon:120.34522,time:&quot;11:00&quot;,n:4},
+        {name:&quot;第二海水浴场&quot;,lat:36.0527,lon:120.3490,time:&quot;12:30&quot;,n:5},
+        {name:&quot;太平角&quot;,lat:36.0529,lon:120.3620,time:&quot;14:00&quot;,n:6},
+        {name:&quot;第三海水浴场&quot;,lat:36.0554,lon:120.3706,time:&quot;15:30&quot;,n:7},
+        {name:&quot;五四广场&quot;,lat:36.06442,lon:120.37544,time:&quot;17:00&quot;,n:8},
+        {name:&quot;奥帆中心&quot;,lat:36.05711,lon:120.39377,time:&quot;18:00&quot;,n:9},
+        {name:&quot;小麦岛公园&quot;,lat:36.05369,lon:120.42542,time:&quot;19:30&quot;,n:10,note:&quot;Nemo Coffee 银海大世界店&quot;}
       ]},
       3:{date:&quot;9月13日&quot;,title:&quot;崂山太清线&quot;,summary:&quot;全天 · 建议早出发&quot;,stops:[
         {...hotel,n:&quot;住&quot;,time:&quot;07:00出发&quot;},
@@ -884,7 +890,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     const markerByKey=new Map();
     function key(p){return `${p.name}|${p.lat}|${p.lon}`;}
     function iconFor(p,day){let cls=`pin pin-day-${day}`,txt=p.n;if(p.type===&quot;hotel&quot;){cls=&quot;pin pin-hotel&quot;;txt=&quot;住&quot;;}if(p.type===&quot;train&quot;){cls=&quot;pin pin-train&quot;;txt=p.n||&quot;站&quot;;}return L.divIcon({className:&quot;pin-wrap&quot;,html:`&lt;div class=&quot;${cls}&quot;&gt;${txt}&lt;/div&gt;`,iconSize:p.type===&quot;hotel&quot;?[32,32]:[28,28],iconAnchor:p.type===&quot;hotel&quot;?[16,16]:[14,14],popupAnchor:[0,-16]});}
-    function addMarker(p,day,permanent){const photo=photos[p.name];const photoHtml=photo?`&lt;img class=&quot;popup-photo&quot; src=&quot;${photo}&quot; alt=&quot;${p.name}&quot; loading=&quot;lazy&quot;&gt;`:&quot;&quot;;const m=L.marker([p.lat,p.lon],{icon:iconFor(p,day)}).bindPopup(`&lt;strong&gt;${p.name}&lt;/strong&gt;${p.time||&quot;&quot;}${photoHtml}`,{minWidth:230,maxWidth:280});if(permanent)m.bindTooltip(p.name,{permanent:true,direction:&quot;top&quot;,offset:[0,-13],opacity:.95});m.addTo(markerLayer);markerByKey.set(key(p),m);return m;}
+    function addMarker(p,day,permanent){const photo=photos[p.name];const noteHtml=p.note?`&lt;span class=&quot;popup-note&quot;&gt;${p.note}&lt;/span&gt;`:&quot;&quot;;const photoHtml=photo?`&lt;img class=&quot;popup-photo&quot; src=&quot;${photo}&quot; alt=&quot;${p.name}&quot; loading=&quot;lazy&quot;&gt;`:&quot;&quot;;const m=L.marker([p.lat,p.lon],{icon:iconFor(p,day)}).bindPopup(`&lt;strong&gt;${p.name}&lt;/strong&gt;${p.time||&quot;&quot;}${noteHtml}${photoHtml}`,{minWidth:230,maxWidth:280});if(permanent)m.bindTooltip(p.name,{permanent:true,direction:&quot;top&quot;,offset:[0,-13],opacity:.95});m.addTo(markerLayer);markerByKey.set(key(p),m);return m;}
     function routePoints(info){return info.stops.map(p=&gt;[p.lat,p.lon]);}
     function draw(day){routeLayer.clearLayers();markerLayer.clearLayers();markerByKey.clear();const bounds=[];
       if(day===&quot;all&quot;){
@@ -1147,3 +1153,4 @@ html&gt;body{padding:0}&lt;/style&gt;
 "></iframe>
 </body>
 </html>
+
